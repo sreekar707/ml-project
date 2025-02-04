@@ -101,6 +101,7 @@ class DataTransformation:
             return(train_arr,test_arr,self.data_transformation_config.preprocessor_ob_file_path)
         
         except Exception as e:
+            print(e)
             raise CustomException(e,sys)
             pass
             
