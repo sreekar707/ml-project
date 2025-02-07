@@ -13,6 +13,7 @@ class PredictPipeline:
             preprocessor_path='artifacts\preprocessor.pkl'
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
+            features.fillna('Unknown', inplace=True)
             data_scaled=preprocessor.transform(features)
             preds=model.predict(data_scaled)
             return preds
@@ -32,7 +33,7 @@ class CustomData:
                 writing_score:int
         
                   ):
-        print(gender,race_ethnicity,parental_level_of_education,lunch,test_preparation_course,reading_score,writing_score)
+
         self.gender=gender
         self.race_ethnicity=race_ethnicity
         self.parental_level_of_education=parental_level_of_education
